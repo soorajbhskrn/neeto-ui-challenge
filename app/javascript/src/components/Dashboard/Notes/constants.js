@@ -24,3 +24,48 @@ export const NOTES_TABLE_COLUMN_DATA = [
     width: "70%",
   },
 ];
+
+export const NOTES_CREATED = [
+  {
+    id: "kdsjkj2",
+    title: "How to claim the warranty?",
+    description:
+      "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
+    updatedAt: "Created 2 hours ago",
+  },
+  {
+    id: "kdsjkj9",
+    title: "How to claim the warranty?",
+    description:
+      "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
+    updatedAt: "Drafted 2 hours ago",
+  },
+  {
+    id: "kdsjkj3",
+    title: "How to claim the warranty?",
+    description:
+      "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
+    updatedAt: "Created 2 hours ago",
+  },
+  {
+    id: "kdsjkj4",
+    title: "How to claim the warranty?",
+    description:
+      "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
+    updatedAt: "Drafted 2 hours ago",
+  },
+  {
+    id: "kdsjkj1",
+    title: "How to claim the warranty?",
+    description:
+      "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
+    updatedAt: "Created 2 hours ago",
+  },
+  {
+    id: "kdsjkj0",
+    title: "How to claim the warranty?",
+    description:
+      "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
+    updatedAt: "Drafted 2 hours ago",
+  },
+];
