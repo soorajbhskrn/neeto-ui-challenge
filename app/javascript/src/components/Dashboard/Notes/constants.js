@@ -25,6 +25,20 @@ export const NOTES_TABLE_COLUMN_DATA = [
   },
 ];
 
+export const ASSIGNED_CONTACTS = [
+  { label: "John Doe", value: "1" },
+  { label: "Jane Doe", value: "2" },
+  { label: "Joe Doe", value: "3" },
+];
+export const TAGS = [
+  { label: "Getting Started", value: "1" },
+  { label: "Onboarding", value: "2" },
+  { label: "User Flow", value: "3" },
+  { label: "UX", value: "4" },
+  { label: "Bugs", value: "5" },
+  { label: "v2.0", value: "6" },
+];
+
 export const NOTES_CREATED = [
   {
     id: "kdsjkj2",
