@@ -77,7 +77,6 @@ const Notes = () => {
         </Container>
       </div>
       <NewNotePane
-        fetchNotes={fetchNotes}
         setShowPane={setShowNewNotePane}
         showPane={showNewNotePane}
       />
