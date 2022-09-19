@@ -3,12 +3,9 @@ import * as yup from "yup";
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
   title: "",
   description: "",
+  assigned_contact: null,
+  tags: [],
 };
-
-export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
-  title: yup.string().required("Title is required"),
-  description: yup.string().required("Description is required"),
-});
 
 export const NOTES_TABLE_COLUMN_DATA = [
   {
@@ -38,6 +35,35 @@ export const TAGS = [
   { label: "Bugs", value: "5" },
   { label: "v2.0", value: "6" },
 ];
+
+export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  title: yup.string().required("Title is required"),
+  description: yup.string().required("Description is required"),
+  assigned_contact: yup
+    .object()
+    .nullable()
+    .shape({
+      label: yup
+        .string()
+        .oneOf(ASSIGNED_CONTACTS.map(contact => contact.label)),
+      value: yup
+        .string()
+        .oneOf(ASSIGNED_CONTACTS.map(contact => contact.value)),
+    })
+    .required("Assigned Contact is required"),
+  tags: yup
+    .array(
+      yup
+        .object()
+        .nullable()
+        .shape({
+          label: yup.string().oneOf(TAGS.map(tag => tag.label)),
+          value: yup.string().oneOf(TAGS.map(tag => tag.value)),
+        })
+    )
+    .min(1, "At least one tag is required")
+    .required("Tags are required"),
+});
 
 export const NOTES_CREATED = [
   {

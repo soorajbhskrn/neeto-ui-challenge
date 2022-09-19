@@ -45,6 +45,7 @@ const NoteForm = ({ onClose, note, isEdit }) => {
               rows={2}
             />
             <Select
+              required
               className="w-full flex-grow-0"
               label="Assigned Contact"
               name="assigned_contact"
@@ -53,6 +54,7 @@ const NoteForm = ({ onClose, note, isEdit }) => {
             />
             <Select
               isMulti
+              required
               className="w-full flex-grow-0"
               label="Tags"
               name="tags"
