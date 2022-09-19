@@ -27,7 +27,7 @@ export const ASSIGNED_CONTACTS = [
   { label: "Jane Doe", value: "2" },
   { label: "Joe Doe", value: "3" },
 ];
-export const TAGS = [
+export const ROLES = [
   { label: "Getting Started", value: "1" },
   { label: "Onboarding", value: "2" },
   { label: "User Flow", value: "3" },
@@ -57,8 +57,8 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
         .object()
         .nullable()
         .shape({
-          label: yup.string().oneOf(TAGS.map(tag => tag.label)),
-          value: yup.string().oneOf(TAGS.map(tag => tag.value)),
+          label: yup.string().oneOf(ROLES.map(tag => tag.label)),
+          value: yup.string().oneOf(ROLES.map(tag => tag.value)),
         })
     )
     .min(1, "At least one tag is required")

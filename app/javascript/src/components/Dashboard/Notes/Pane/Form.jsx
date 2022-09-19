@@ -7,7 +7,7 @@ import { Input, Select, Textarea } from "neetoui/formik";
 import {
   ASSIGNED_CONTACTS,
   NOTES_FORM_VALIDATION_SCHEMA,
-  TAGS,
+  ROLES,
 } from "../constants";
 
 const NoteForm = ({ onClose, note, isEdit }) => {
@@ -56,9 +56,9 @@ const NoteForm = ({ onClose, note, isEdit }) => {
               isMulti
               required
               className="w-full flex-grow-0"
-              label="Tags"
-              name="tags"
-              options={TAGS}
+              label="Roles"
+              name="role"
+              options={ROLES}
               placeholder="Select Role"
             />
           </Pane.Body>
