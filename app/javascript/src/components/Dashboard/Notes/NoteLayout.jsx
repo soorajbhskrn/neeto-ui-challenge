@@ -10,15 +10,15 @@ const NoteLayout = () => {
   const { user } = useUserState();
   return (
     <div>
-      {notes.map(({ id, title, description, updatedAt }) => (
+      {notes.map(({ id, title, description, createdAt }) => (
         <NoteItem
+          createdAt={createdAt}
           description={description}
           id={id}
           key={id}
           notes={notes}
           setNotes={setNotes}
           title={title}
-          updatedAt={updatedAt}
           userName={`${user.first_name} ${user.last_name}`}
         />
       ))}
