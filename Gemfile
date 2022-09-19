@@ -7,6 +7,10 @@ ruby "3.0.4"
 gem "rails", "~> 7.0.3.1"
 gem "sprockets"
 
+# database
+gem "pg", group: [:production]
+gem "sqlite3", "~> 1.4", group: [:development, :test]
+
 # friends of Rails
 gem "sass-rails", ">= 6"
 gem "sprockets-rails"
@@ -16,9 +20,6 @@ gem "webpacker"
 
 # React
 gem "react-rails"
-
-# database
-gem "pg"
 
 # Application server
 gem "puma"
