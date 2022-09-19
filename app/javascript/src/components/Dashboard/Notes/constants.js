@@ -71,41 +71,41 @@ export const NOTES_CREATED = [
     title: "How to claim the warranty?",
     description:
       "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
-    updatedAt: "Created 2 hours ago",
+    createdAt: new Date("March 3, 2020"),
   },
   {
     id: "kdsjkj9",
     title: "How to claim the warranty?",
     description:
       "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
-    updatedAt: "Drafted 2 hours ago",
+    createdAt: new Date("March 3, 2020"),
   },
   {
     id: "kdsjkj3",
     title: "How to claim the warranty?",
     description:
       "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
-    updatedAt: "Created 2 hours ago",
+    createdAt: new Date("March 3, 2020"),
   },
   {
     id: "kdsjkj4",
     title: "How to claim the warranty?",
     description:
       "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
-    updatedAt: "Drafted 2 hours ago",
+    createdAt: new Date("March 3, 2020"),
   },
   {
     id: "kdsjkj1",
     title: "How to claim the warranty?",
     description:
       "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
-    updatedAt: "Created 2 hours ago",
+    createdAt: new Date("March 3, 2020"),
   },
   {
     id: "kdsjkj0",
     title: "How to claim the warranty?",
     description:
       "Are you getting my texts??, she texted to him. He glanced at it and chuckled under his breath. Ofcourse he was getting on them,but if he wasn't getting",
-    updatedAt: "Drafted 2 hours ago",
+    createdAt: new Date("March 3, 2020"),
   },
 ];
