@@ -57,8 +57,8 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
         .object()
         .nullable()
         .shape({
-          label: yup.string().oneOf(ROLES.map(tag => tag.label)),
-          value: yup.string().oneOf(ROLES.map(tag => tag.value)),
+          label: yup.string().oneOf(ROLES.map(role => role.label)),
+          value: yup.string().oneOf(ROLES.map(role => role.value)),
         })
     )
     .min(1, "At least one tag is required")
