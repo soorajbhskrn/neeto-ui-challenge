@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
-const createdDateTillNow = dateTime => dayjs(dateTime).fromNow();
+const formatDateRelativeToNow = dateTime => dayjs(dateTime).fromNow();
 const formatDateWithDayAndTime = dateTime =>
   dayjs(dateTime).format("dddd, hh:mm A");
 
-export { createdDateTillNow, formatDateWithDayAndTime };
+export { formatDateRelativeToNow, formatDateWithDayAndTime };
