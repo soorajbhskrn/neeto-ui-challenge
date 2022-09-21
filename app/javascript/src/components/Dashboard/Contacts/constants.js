@@ -1,7 +1,8 @@
 export const CONTACTS = [
   {
     id: 1,
-    name: "John Doe",
+    firstName: "John",
+    lastName: "Doe",
     email: "johndoe@gmail.com",
     role: "Owner",
     imageUrl:
@@ -10,7 +11,8 @@ export const CONTACTS = [
   },
   {
     id: 2,
-    name: "Joe Doe",
+    firstName: "Joe",
+    lastName: "Doe",
     email: "joedoe@gmail.com",
     role: "Owner",
     imageUrl:
@@ -19,7 +21,8 @@ export const CONTACTS = [
   },
   {
     id: 3,
-    name: "Jane Doe",
+    firstName: "Jane",
+    lastName: "Doe",
     email: "janedoe@gmail.com",
     role: "Owner",
     imageUrl:
@@ -28,7 +31,8 @@ export const CONTACTS = [
   },
   {
     id: 4,
-    name: "John Doe",
+    firstName: "John",
+    lastName: "Doe",
     email: "johndoe@gmail.com",
     role: "Owner",
     imageUrl:
@@ -37,7 +41,8 @@ export const CONTACTS = [
   },
   {
     id: 5,
-    name: "Joe Doe",
+    firstName: "Joe",
+    lastName: "Doe",
     email: "joedoe@gmail.com",
     role: "Owner",
     imageUrl:
@@ -46,7 +51,8 @@ export const CONTACTS = [
   },
   {
     id: 6,
-    name: "Jane Doe",
+    firstName: "Jane",
+    lastName: "Doe",
     email: "janedoe@gmail.com",
     role: "Owner",
     imageUrl:

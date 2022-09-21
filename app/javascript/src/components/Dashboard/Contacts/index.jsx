@@ -8,14 +8,14 @@ import EmptyState from "components/Common/EmptyState";
 
 import { CONTACTS } from "./constants";
 import ContactMenu from "./ContactMenu";
-import ContactTable from "./ContactTable/ContactTable";
+import ContactTable from "./Table";
 
 const Contacts = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const [contacts, setContacts] = useState(CONTACTS);
   return (
-    <div className="flex w-full">
+    <>
       <ContactMenu />
       <Container>
         <Header
@@ -45,7 +45,7 @@ const Contacts = () => {
           <Pagination count={10} navigate={() => {}} pageNo={1} pageSize={9} />
         </div>
       </Container>
-    </div>
+    </>
   );
 };
 

@@ -4,7 +4,7 @@ import { Table as NeetoUITable, Toastr } from "neetoui";
 
 import { buildContactColumnData } from "components/Dashboard/Contacts/utils";
 
-import DeleteAlert from "../DeleteAlert";
+import DeleteAlert from "./DeleteAlert";
 
 const ContactTable = ({ contacts, setContacts }) => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
