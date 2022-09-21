@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 
-import { Button, Table, Pagination } from "neetoui";
+import EmptyNotesListImage from "images/EmptyNotesList";
+import { Button, Pagination } from "neetoui";
 import { Header, Container } from "neetoui/layouts";
+
+import EmptyState from "components/Common/EmptyState";
 
 import { CONTACTS } from "./constants";
 import ContactMenu from "./ContactMenu";
-import { buildContactColumnData } from "./utils";
+import ContactTable from "./ContactTable/ContactTable";
 
 const Contacts = () => {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const [contacts, setContacts] = useState(CONTACTS);
   return (
     <div className="flex w-full">
       <ContactMenu />
@@ -25,14 +30,17 @@ const Contacts = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        <Table
-          columnData={buildContactColumnData()}
-          currentPageNumber={1}
-          defaultPageSize={10}
-          rowData={CONTACTS}
-          onRowClick={() => {}}
-          onRowSelect={() => {}}
-        />
+        {contacts.length ? (
+          <ContactTable contacts={contacts} setContacts={setContacts} />
+        ) : (
+          <EmptyState
+            image={EmptyNotesListImage}
+            primaryAction={() => {}}
+            primaryActionLabel="Add New Contact"
+            subtitle="Add new contacts to send customized emails to them."
+            title="Looks like you don't have any contact!"
+          />
+        )}
         <div className="my-8 flex w-full justify-end">
           <Pagination count={10} navigate={() => {}} pageNo={1} pageSize={9} />
         </div>

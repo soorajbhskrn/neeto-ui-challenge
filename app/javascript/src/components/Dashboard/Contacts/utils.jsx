@@ -19,16 +19,26 @@ const renderAvatarWithNameRoleAndImage = (name, { role, imageUrl }) => (
   </div>
 );
 
-const renderDropdownButton = setShowDeleteAlert => (
+const renderDropdownButton = (setShowDeleteAlert, setSelectedContactId, id) => (
   <div>
     <Dropdown buttonStyle="text" icon={MenuVertical}>
       <li> Edit </li>
-      <li onClick={() => setShowDeleteAlert(true)}>Delete</li>
+      <li
+        onClick={() => {
+          setShowDeleteAlert(true);
+          setSelectedContactId(id);
+        }}
+      >
+        Delete
+      </li>
     </Dropdown>
   </div>
 );
 
-export const buildContactColumnData = () => [
+export const buildContactColumnData = (
+  setShowDeleteAlert,
+  setSelectedContactId
+) => [
   {
     dataIndex: "name",
     key: "name",
@@ -55,6 +65,7 @@ export const buildContactColumnData = () => [
     key: "dropdown_menu",
     title: "",
 
-    render: renderDropdownButton,
+    render: (item, { id }) =>
+      renderDropdownButton(setShowDeleteAlert, setSelectedContactId, id),
   },
 ];
