@@ -5,7 +5,7 @@ import { Button, Avatar, Tooltip, Typography, Dropdown, Toastr } from "neetoui";
 import PropTypes from "prop-types";
 
 import DeleteAlert from "../DeleteAlert";
-import { lastUpdated, formatDate } from "../utils";
+import { createdDateTillNow, formatDateWithDayAndTime } from "../utils";
 
 const NoteItem = ({
   id,
@@ -45,9 +45,12 @@ const NoteItem = ({
         />
         <div className="flex items-center">
           <Clock color="#1e1e20" size={22} />
-          <Tooltip content={formatDate(createdAt)} position="bottom-end">
+          <Tooltip
+            content={formatDateWithDayAndTime(createdAt)}
+            position="bottom-end"
+          >
             <Typography className="mx-2" style="body3">
-              {lastUpdated(createdAt)}
+              {createdDateTillNow(createdAt)}
             </Typography>
           </Tooltip>
           <Avatar
