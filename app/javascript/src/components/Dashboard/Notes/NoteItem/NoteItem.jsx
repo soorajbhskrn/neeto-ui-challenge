@@ -50,7 +50,7 @@ const NoteItem = ({
             position="bottom-end"
           >
             <Typography className="mx-2" style="body3">
-              {createdDateTillNow(createdAt)}
+              {formatDateRelativeToNow(createdAt)}
             </Typography>
           </Tooltip>
           <Avatar
