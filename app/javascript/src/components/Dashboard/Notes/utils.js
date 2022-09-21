@@ -1,7 +1,9 @@
 import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
-const createdDateTillNow = dateTime => dayjs(dateTime).fromNow();
-const formatDateWithDayAndTime = dateTime =>
-  dayjs(dateTime).format("dddd, hh:mm A");
+dayjs.extend(relativeTime);
 
-export { createdDateTillNow, formatDateWithDayAndTime };
+const lastUpdated = dateTime => dayjs(dateTime).fromNow();
+const formatDate = dateTime => dayjs(dateTime).format("dddd, hh:mm A");
+
+export { lastUpdated, formatDate };
