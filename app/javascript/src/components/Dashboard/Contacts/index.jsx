@@ -8,11 +8,13 @@ import EmptyState from "components/Common/EmptyState";
 
 import { CONTACTS } from "./constants";
 import Menu from "./Menu";
+import NewContactPane from "./Pane/Create";
 import Table from "./Table";
 
 const Contacts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [contacts, setContacts] = useState(CONTACTS);
+  const [showNewContactPane, setShowNewContactPane] = useState(false);
   return (
     <>
       <Menu />
@@ -21,7 +23,11 @@ const Contacts = () => {
           menuBarToggle={() => {}}
           title="All Contacts"
           actionBlock={
-            <Button icon="ri-add-line" label="Add Contact" onClick={() => {}} />
+            <Button
+              icon="ri-add-line"
+              label="Add Contact"
+              onClick={() => setShowNewContactPane(true)}
+            />
           }
           searchProps={{
             value: searchTerm,
@@ -44,6 +50,11 @@ const Contacts = () => {
           <Pagination count={10} navigate={() => {}} pageNo={1} pageSize={9} />
         </div>
       </Container>
+      <NewContactPane
+        setContacts={setContacts}
+        setShowPane={setShowNewContactPane}
+        showPane={showNewContactPane}
+      />
     </>
   );
 };
