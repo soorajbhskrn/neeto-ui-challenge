@@ -22,19 +22,27 @@ const renderAvatarWithNameRoleAndImage = (
   </div>
 );
 
+const handleDelete = ({ setShowDeleteAlert, setSelectedContactId, id }) => {
+  setShowDeleteAlert(true);
+  setSelectedContactId(id);
+};
+
 const renderDropdownButton = ({
-  changeDeleteAlert,
-  changeSelectedId,
-  contactId,
+  setShowDeleteAlert,
+  setSelectedContactId,
+  id,
 }) => (
   <div>
     <Dropdown buttonStyle="text" icon={MenuVertical}>
       <li> Edit </li>
       <li
-        onClick={() => {
-          changeDeleteAlert(true);
-          changeSelectedId(contactId);
-        }}
+        onClick={() =>
+          handleDelete({
+            setShowDeleteAlert,
+            setSelectedContactId,
+            id,
+          })
+        }
       >
         Delete
       </li>
@@ -50,7 +58,6 @@ export const buildContactColumnData = (
     dataIndex: "name",
     key: "name",
     title: "NAME & ROLE",
-
     render: renderAvatarWithNameRoleAndImage,
   },
   {
@@ -62,7 +69,6 @@ export const buildContactColumnData = (
     dataIndex: "createdAt",
     key: "createdAt",
     title: "CREATED AT",
-
     render: createdAt => (
       <Typography style="body2">{createdAt.toDateString()}</Typography>
     ),
@@ -71,12 +77,11 @@ export const buildContactColumnData = (
     dataIndex: "dropdown_menu",
     key: "dropdown_menu",
     title: "",
-
     render: (item, { id }) =>
       renderDropdownButton({
-        changeDeleteAlert: setShowDeleteAlert,
-        changeSelectedId: setSelectedContactId,
-        contactId: id,
+        setShowDeleteAlert,
+        setSelectedContactId,
+        id,
       }),
   },
 ];

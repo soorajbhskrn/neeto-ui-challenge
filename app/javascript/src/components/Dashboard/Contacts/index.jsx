@@ -7,16 +7,15 @@ import { Header, Container } from "neetoui/layouts";
 import EmptyState from "components/Common/EmptyState";
 
 import { CONTACTS } from "./constants";
-import ContactMenu from "./ContactMenu";
-import ContactTable from "./Table";
+import Menu from "./Menu";
+import Table from "./Table";
 
 const Contacts = () => {
   const [searchTerm, setSearchTerm] = useState("");
-
   const [contacts, setContacts] = useState(CONTACTS);
   return (
     <>
-      <ContactMenu />
+      <Menu />
       <Container>
         <Header
           menuBarToggle={() => {}}
@@ -31,7 +30,7 @@ const Contacts = () => {
           }}
         />
         {contacts.length ? (
-          <ContactTable contacts={contacts} setContacts={setContacts} />
+          <Table contacts={contacts} setContacts={setContacts} />
         ) : (
           <EmptyState
             image={EmptyNotesListImage}
