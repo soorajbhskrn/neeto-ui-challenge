@@ -4,7 +4,7 @@ import { Search, Settings, Plus } from "neetoicons";
 import { Typography } from "neetoui";
 import { MenuBar } from "neetoui/layouts";
 
-const ContactMenu = () => (
+const Menu = () => (
   <MenuBar showMenu title="Contacts">
     <MenuBar.Block active count={13} label="All" />
     <MenuBar.Block count={2} label="Archived" />
@@ -51,4 +51,4 @@ const ContactMenu = () => (
   </MenuBar>
 );
 
-export default ContactMenu;
+export default Menu;
