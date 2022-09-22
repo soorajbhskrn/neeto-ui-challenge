@@ -1,3 +1,6 @@
+export const PROFILE_PICTURE_URL =
+  "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+
 export const CONTACTS = [
   {
     id: 1,
@@ -5,8 +8,7 @@ export const CONTACTS = [
     lastName: "Doe",
     email: "johndoe@gmail.com",
     role: "Owner",
-    imageUrl:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: PROFILE_PICTURE_URL,
     createdAt: new Date("February 5, 2021"),
   },
   {
@@ -15,8 +17,7 @@ export const CONTACTS = [
     lastName: "Doe",
     email: "joedoe@gmail.com",
     role: "Owner",
-    imageUrl:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: PROFILE_PICTURE_URL,
     createdAt: new Date("February 5, 2021"),
   },
   {
@@ -25,8 +26,7 @@ export const CONTACTS = [
     lastName: "Doe",
     email: "janedoe@gmail.com",
     role: "Owner",
-    imageUrl:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: PROFILE_PICTURE_URL,
     createdAt: new Date("February 5, 2021"),
   },
   {
@@ -35,8 +35,7 @@ export const CONTACTS = [
     lastName: "Doe",
     email: "johndoe@gmail.com",
     role: "Owner",
-    imageUrl:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: PROFILE_PICTURE_URL,
     createdAt: new Date("February 5, 2021"),
   },
   {
@@ -45,8 +44,7 @@ export const CONTACTS = [
     lastName: "Doe",
     email: "joedoe@gmail.com",
     role: "Owner",
-    imageUrl:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: PROFILE_PICTURE_URL,
     createdAt: new Date("February 5, 2021"),
   },
   {
@@ -55,8 +53,7 @@ export const CONTACTS = [
     lastName: "Doe",
     email: "janedoe@gmail.com",
     role: "Owner",
-    imageUrl:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    imageUrl: PROFILE_PICTURE_URL,
     createdAt: new Date("February 5, 2021"),
   },
 ];
