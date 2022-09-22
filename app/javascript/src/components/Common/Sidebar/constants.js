@@ -13,8 +13,8 @@ export const SIDENAV_LINKS = [
     icon: Notes,
   },
   {
-    label: "Profile",
-    to: "/logout",
+    label: "Contacts",
+    to: "/contacts",
     icon: UserCircle,
   },
   {
