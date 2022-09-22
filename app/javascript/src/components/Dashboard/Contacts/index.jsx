@@ -29,7 +29,7 @@ const Contacts = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        {contacts.length ? (
+        {contacts.length > 0 ? (
           <Table contacts={contacts} setContacts={setContacts} />
         ) : (
           <EmptyState
