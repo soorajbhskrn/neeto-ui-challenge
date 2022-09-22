@@ -3,8 +3,10 @@ import React from "react";
 import { MenuVertical } from "neetoicons";
 import { Avatar, Typography, Dropdown } from "neetoui";
 
+const { MenuItem } = Dropdown;
+
 const renderAvatarWithNameRoleAndImage = (
-  name,
+  _,
   { firstName, lastName, role, imageUrl }
 ) => (
   <div className="flex flex-row items-center">
@@ -27,25 +29,13 @@ const handleDelete = ({ setShowDeleteAlert, setSelectedContactId, id }) => {
   setSelectedContactId(id);
 };
 
-const renderDropdownButton = ({
-  setShowDeleteAlert,
-  setSelectedContactId,
-  id,
-}) => (
+const renderDropdownButton = props => (
   <div>
     <Dropdown buttonStyle="text" icon={MenuVertical}>
-      <li> Edit </li>
-      <li
-        onClick={() =>
-          handleDelete({
-            setShowDeleteAlert,
-            setSelectedContactId,
-            id,
-          })
-        }
-      >
+      <MenuItem.Button>Edit</MenuItem.Button>
+      <MenuItem.Button style="danger" onClick={() => handleDelete(props)}>
         Delete
-      </li>
+      </MenuItem.Button>
     </Dropdown>
   </div>
 );
@@ -77,7 +67,7 @@ export const buildContactColumnData = (
     dataIndex: "dropdown_menu",
     key: "dropdown_menu",
     title: "",
-    render: (item, { id }) =>
+    render: (_, { id }) =>
       renderDropdownButton({
         setShowDeleteAlert,
         setSelectedContactId,
