@@ -30,12 +30,14 @@ const NoteForm = ({ onClose, note, isEdit }) => {
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <Input
+              required
               className="w-full flex-grow-0"
               label="Title"
               name="title"
               placeholder="Enter Title"
             />
             <Textarea
+              required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
@@ -43,6 +45,7 @@ const NoteForm = ({ onClose, note, isEdit }) => {
               rows={2}
             />
             <Select
+              required
               className="w-full flex-grow-0"
               label="Assigned Contact"
               name="assignedContact"
@@ -51,6 +54,7 @@ const NoteForm = ({ onClose, note, isEdit }) => {
             />
             <Select
               isMulti
+              required
               className="w-full flex-grow-0"
               label="Roles"
               name="roles"
