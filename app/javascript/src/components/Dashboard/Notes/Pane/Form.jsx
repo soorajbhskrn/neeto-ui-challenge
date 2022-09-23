@@ -48,7 +48,7 @@ const NoteForm = ({ onClose, note, isEdit }) => {
               required
               className="w-full flex-grow-0"
               label="Assigned Contact"
-              name="assigned_contact"
+              name="assignedContact"
               options={ASSIGNED_CONTACTS}
               placeholder="Select Role"
             />
@@ -57,7 +57,7 @@ const NoteForm = ({ onClose, note, isEdit }) => {
               required
               className="w-full flex-grow-0"
               label="Roles"
-              name="role"
+              name="roles"
               options={ROLES}
               placeholder="Select Role"
             />

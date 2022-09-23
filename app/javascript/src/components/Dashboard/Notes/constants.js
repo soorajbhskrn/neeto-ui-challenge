@@ -1,10 +1,11 @@
+import { buildSelectOptions } from "utils";
 import * as yup from "yup";
 
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
   title: "",
   description: "",
-  assigned_contact: null,
-  tags: [],
+  assignedContact: null,
+  roles: [],
 };
 
 export const NOTES_TABLE_COLUMN_DATA = [
@@ -22,24 +23,24 @@ export const NOTES_TABLE_COLUMN_DATA = [
   },
 ];
 
-export const ASSIGNED_CONTACTS = [
-  { label: "John Doe", value: "1" },
-  { label: "Jane Doe", value: "2" },
-  { label: "Joe Doe", value: "3" },
-];
-export const ROLES = [
-  { label: "Getting Started", value: "1" },
-  { label: "Onboarding", value: "2" },
-  { label: "User Flow", value: "3" },
-  { label: "UX", value: "4" },
-  { label: "Bugs", value: "5" },
-  { label: "v2.0", value: "6" },
-];
+export const ASSIGNED_CONTACTS = buildSelectOptions([
+  "John Doe",
+  "Jane Doe",
+  "Joe Doe",
+]);
+export const ROLES = buildSelectOptions([
+  "Getting Started",
+  "Onboarding",
+  "User Flow",
+  "UX",
+  "Bugs",
+  "v2.0",
+]);
 
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
-  assigned_contact: yup
+  assignedContact: yup
     .object()
     .nullable()
     .shape({
@@ -51,7 +52,7 @@ export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
         .oneOf(ASSIGNED_CONTACTS.map(contact => contact.value)),
     })
     .required("Assigned Contact is required"),
-  tags: yup
+  roles: yup
     .array(
       yup
         .object()
