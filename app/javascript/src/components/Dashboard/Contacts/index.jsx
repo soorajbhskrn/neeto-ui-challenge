@@ -8,7 +8,7 @@ import EmptyState from "components/Common/EmptyState";
 
 import { CONTACTS } from "./constants";
 import Menu from "./Menu";
-import NewContactPane from "./Pane/Create";
+import NewContactPane from "./Pane/NewContactPane";
 import Table from "./Table";
 
 const Contacts = () => {

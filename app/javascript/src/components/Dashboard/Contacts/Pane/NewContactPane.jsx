@@ -2,7 +2,7 @@ import React from "react";
 
 import { Pane, Typography } from "neetoui";
 
-import Form from "./Form";
+import Form from "./ContactForm";
 
 import { CONTACTS_INITIAL_FORM_VALUES } from "../constants";
 

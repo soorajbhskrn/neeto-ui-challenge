@@ -15,6 +15,7 @@ const ContactForm = ({ onClose, contact, setContacts }) => {
 
   const handleSubmit = values => {
     setContacts(contacts => [
+      ...contacts,
       {
         ...values,
         id: contacts.length + 1,
@@ -22,7 +23,6 @@ const ContactForm = ({ onClose, contact, setContacts }) => {
         imageUrl: PROFILE_PICTURE_URL,
         createdAt: new Date(),
       },
-      ...contacts,
     ]);
     Toastr.success("Contact has  successfully created");
     onClose();
@@ -34,19 +34,21 @@ const ContactForm = ({ onClose, contact, setContacts }) => {
       validateOnBlur={submitted}
       validateOnChange={submitted}
       validationSchema={CONTACTS_FORM_VALIDATION_SCHEMA}
-      onSubmit={values => handleSubmit(values)}
+      onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <div className="flex w-full space-x-2">
               <Input
+                required
                 className="w-full flex-grow-0"
                 label="First Name"
                 name="firstName"
                 placeholder="Enter First Name"
               />
               <Input
+                required
                 className="w-full flex-grow-0"
                 label="Last Name"
                 name="lastName"
@@ -54,12 +56,14 @@ const ContactForm = ({ onClose, contact, setContacts }) => {
               />
             </div>
             <Input
+              required
               className="w-full flex-grow-0"
               label="Email Address"
               name="email"
               placeholder="Enter your email address"
             />
             <Select
+              required
               className="w-full flex-grow-0"
               label="Role"
               name="role"
@@ -82,6 +86,7 @@ const ContactForm = ({ onClose, contact, setContacts }) => {
               label="Cancel"
               size="large"
               style="text"
+              type="reset"
               onClick={onClose}
             />
           </Pane.Footer>
