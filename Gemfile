@@ -8,8 +8,7 @@ gem "rails", "~> 7.0.3.1"
 gem "sprockets"
 
 # database
-gem "pg", group: [:production]
-gem "sqlite3", "~> 1.4", group: [:development, :test]
+gem "pg"
 
 # friends of Rails
 gem "sass-rails", ">= 6"

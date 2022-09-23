@@ -1,28 +1,21 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
+import { Button, Pane, Toastr } from "neetoui";
+import { Input, Select, Textarea } from "neetoui/formik";
 
-import notesApi from "apis/notes";
+import {
+  ASSIGNED_CONTACTS,
+  NOTES_FORM_VALIDATION_SCHEMA,
+  ROLES,
+} from "../constants";
 
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
-
-const NoteForm = ({ onClose, refetch, note, isEdit }) => {
+const NoteForm = ({ onClose, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async values => {
-    try {
-      if (isEdit) {
-        await notesApi.update(note.id, values);
-      } else {
-        await notesApi.create(values);
-      }
-      refetch();
-      onClose();
-    } catch (err) {
-      logger.error(err);
-    }
+  const handleSubmit = () => {
+    Toastr.success("Note has been successfully created");
+    onClose();
   };
 
   return (
@@ -41,13 +34,32 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               className="w-full flex-grow-0"
               label="Title"
               name="title"
+              placeholder="Enter Title"
             />
             <Textarea
               required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
-              rows={8}
+              placeholder="Enter note description"
+              rows={2}
+            />
+            <Select
+              required
+              className="w-full flex-grow-0"
+              label="Assigned Contact"
+              name="assignedContact"
+              options={ASSIGNED_CONTACTS}
+              placeholder="Select Role"
+            />
+            <Select
+              isMulti
+              required
+              className="w-full flex-grow-0"
+              label="Roles"
+              name="roles"
+              options={ROLES}
+              placeholder="Select Role"
             />
           </Pane.Body>
           <Pane.Footer>

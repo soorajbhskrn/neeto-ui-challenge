@@ -1,42 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Alert } from "neetoui";
+import propTypes from "prop-types";
 
-import notesApi from "apis/notes";
+const DeleteAlert = ({ open, setOpen, handleDelete }) => (
+  <Alert
+    isOpen={open}
+    message="Are you sure you want to delete the note? This action cannot be undone."
+    title="Delete Note"
+    onClose={() => setOpen(false)}
+    onSubmit={handleDelete}
+  />
+);
 
-const DeleteAlert = ({
-  refetch,
-  onClose,
-  selectedNoteIds,
-  setSelectedNoteIds,
-}) => {
-  const [deleting, setDeleting] = useState(false);
-
-  const handleDelete = async () => {
-    try {
-      setDeleting(true);
-      await notesApi.destroy({ ids: selectedNoteIds });
-      onClose();
-      setSelectedNoteIds([]);
-      refetch();
-    } catch (error) {
-      logger.error(error);
-      setDeleting(false);
-    }
-  };
-
-  return (
-    <Alert
-      isOpen
-      isSubmitting={deleting}
-      message="Are you sure you want to continue? This cannot be undone."
-      title={`Delete ${selectedNoteIds.length} ${
-        selectedNoteIds.length > 1 ? "notes" : "note"
-      }?`}
-      onClose={onClose}
-      onSubmit={handleDelete}
-    />
-  );
+DeleteAlert.propTypes = {
+  open: propTypes.bool,
+  setOpen: propTypes.func,
+  handleDelete: propTypes.func,
 };
 
 export default DeleteAlert;

@@ -27,8 +27,10 @@ const Notes = () => {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const { data } = await notesApi.fetch();
-      setNotes(data.notes);
+      const {
+        data: { notes },
+      } = await notesApi.fetch();
+      setNotes(notes);
     } catch (error) {
       logger.error(error);
     } finally {
@@ -75,7 +77,6 @@ const Notes = () => {
         </Container>
       </div>
       <NewNotePane
-        fetchNotes={fetchNotes}
         setShowPane={setShowNewNotePane}
         showPane={showNewNotePane}
       />
