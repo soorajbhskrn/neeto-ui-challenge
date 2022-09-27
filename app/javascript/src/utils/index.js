@@ -1,7 +1,10 @@
 import * as R from "ramda";
 
 const convertToCamelCase = sentence => {
-  const [firstWord, ...rest] = sentence.split(" ");
+  const [firstWord, ...rest] = sentence
+    .replace(/[^a-zA-Z]/gi, " ")
+    .split(" ")
+    .filter(word => word !== "");
   return [firstWord.toLowerCase(), ...rest.map(capitalize)].join("");
 };
 

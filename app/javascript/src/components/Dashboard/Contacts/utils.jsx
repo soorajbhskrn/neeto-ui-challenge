@@ -24,21 +24,20 @@ const renderAvatarWithNameRoleAndImage = (
   </div>
 );
 
-const handleDelete = ({ setShowDeleteAlert, setSelectedContactId, id }) => {
-  setShowDeleteAlert(true);
-  setSelectedContactId(id);
-};
-
-const renderDropdownButton = props => (
-  <div>
+const renderActionDropdown = props => {
+  const handleDelete = ({ setShowDeleteAlert, setSelectedContactId, id }) => {
+    setShowDeleteAlert(true);
+    setSelectedContactId(id);
+  };
+  return (
     <Dropdown buttonStyle="text" icon={MenuVertical}>
       <MenuItem.Button>Edit</MenuItem.Button>
       <MenuItem.Button style="danger" onClick={() => handleDelete(props)}>
         Delete
       </MenuItem.Button>
     </Dropdown>
-  </div>
-);
+  );
+};
 
 export const buildContactColumnData = (
   setShowDeleteAlert,
@@ -68,7 +67,7 @@ export const buildContactColumnData = (
     key: "dropdown_menu",
     title: "",
     render: (_, { id }) =>
-      renderDropdownButton({
+      renderActionDropdown({
         setShowDeleteAlert,
         setSelectedContactId,
         id,
